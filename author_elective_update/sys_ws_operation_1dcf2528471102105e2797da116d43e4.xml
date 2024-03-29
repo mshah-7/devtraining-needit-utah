@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="DELETE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri>/api/x_58872_needit/get_tickets/tickets</default_operation_uri>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>Get records</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    // implement resource here
+
+    var answer = [];
+
+    // Get values from the respective query parameters.
+    var number = request.queryParams.number;
+    // var short_description = request.queryParams.short_description;
+    // var u_what_needed = request.queryParams.u_what_needed;
+
+
+    // Generate 404 if no query parameters provided.
+    if (!number) {
+        response.setError(new sn_ws_err.NotFoundError('No query parameters defined.'));
+        response.setStatus(404);
+        return;
+    }
+
+    // Query
+    var vehicleTable = 'x_58872_needit_needit';
+    var vehicleGr = new GlideRecordSecure(vehicleTable);
+    if (number) { vehicleGr.addQuery('number', number); }
+
+    
+    vehicleGr.query();
+
+
+    // Generate a 404 if no vehicles were found.
+    if (!vehicleGr.hasNext()) {
+        response.setError(new sn_ws_err.NotFoundError('No records found.'));
+        response.setStatus(404);
+        return;
+    }
+
+    // For the vehicles found, generate a JSON object and save the vehicle data in it.
+    while (vehicleGr.next()) {
+
+        var vehicleObj = {
+            "number": vehicleGr.getValue('number'),
+            "u_what_needed": vehicleGr.getValue('u_what_needed'),
+            "short_description": vehicleGr.getValue('short_description'),
+            "priority": vehicleGr.getValue('priority'),
+            "state": vehicleGr.getValue('state')
+        };
+        answer.push(vehicleObj);
+    }
+
+    // Generate the response body.
+    response.setBody(answer);
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_58872_needit/v1/get_tickets/tickets</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/tickets</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-29 05:13:52</sys_created_on>
+        <sys_id>1dcf2528471102105e2797da116d43e4</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Get records</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ws_operation_1dcf2528471102105e2797da116d43e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-29 05:53:46</sys_updated_on>
+        <web_service_definition display_value="Get Tickets">ad5e29a4471102105e2797da116d4329</web_service_definition>
+        <web_service_version display_value="v1">c5797160475102105e2797da116d4321</web_service_version>
+    </sys_ws_operation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>a4550c9bdbf1791038f11729139619d2</instance_id>
+        <instance_name>dev186503</instance_name>
+        <name>sys_ws_operation_1dcf2528471102105e2797da116d43e4</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ws_operation"&gt;&lt;sys_ws_operation action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;consumes&gt;application/json,application/xml,text/xml&lt;/consumes&gt;&lt;consumes_customized&gt;false&lt;/consumes_customized&gt;&lt;default_operation_uri&gt;/api/x_58872_needit/get_tickets/tickets&lt;/default_operation_uri&gt;&lt;enforce_acl&gt;cf9d01d3e73003009d6247e603f6a990&lt;/enforce_acl&gt;&lt;http_method&gt;GET&lt;/http_method&gt;&lt;name&gt;Get records&lt;/name&gt;&lt;operation_script&gt;&lt;![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    // implement resource here
+
+    var answer = [];
+
+    // Get values from the respective query parameters.
+    var number = request.queryParams.number;
+    // var short_description = request.queryParams.short_description;
+    // var u_what_needed = request.queryParams.u_what_needed;
+
+
+    // Generate 404 if no query parameters provided.
+    if (!number) {
+        response.setError(new sn_ws_err.NotFoundError('No query parameters defined.'));
+        response.setStatus(404);
+        return;
+    }
+
+    // Query
+    var vehicleTable = 'x_58872_needit_needit';
+    var vehicleGr = new GlideRecordSecure(vehicleTable);
+    if (number) { vehicleGr.addQuery('number', number); }
+
+    
+    vehicleGr.query();
+
+
+    // Generate a 404 if no vehicles were found.
+    if (!vehicleGr.hasNext()) {
+        response.setError(new sn_ws_err.NotFoundError('No records found.'));
+        response.setStatus(404);
+        return;
+    }
+
+    // For the vehicles found, generate a JSON object and save the vehicle data in it.
+    while (vehicleGr.next()) {
+
+        var vehicleObj = {
+            "number": vehicleGr.getValue('number'),
+            "u_what_needed": vehicleGr.getValue('u_what_needed'),
+            "short_description": vehicleGr.getValue('short_description'),
+            "priority": vehicleGr.getValue('priority'),
+            "state": vehicleGr.getValue('state')
+        };
+        answer.push(vehicleObj);
+    }
+
+    // Generate the response body.
+    response.setBody(answer);
+
+})(request, response);]]&gt;&lt;/operation_script&gt;&lt;operation_uri&gt;/api/x_58872_needit/v1/get_tickets/tickets&lt;/operation_uri&gt;&lt;produces&gt;application/json,application/xml,text/xml&lt;/produces&gt;&lt;produces_customized&gt;false&lt;/produces_customized&gt;&lt;relative_path&gt;/tickets&lt;/relative_path&gt;&lt;request_example/&gt;&lt;requires_acl_authorization&gt;true&lt;/requires_acl_authorization&gt;&lt;requires_authentication&gt;true&lt;/requires_authentication&gt;&lt;requires_snc_internal_role&gt;true&lt;/requires_snc_internal_role&gt;&lt;short_description/&gt;&lt;sys_class_name&gt;sys_ws_operation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-03-29 05:13:52&lt;/sys_created_on&gt;&lt;sys_id&gt;1dcf2528471102105e2797da116d43e4&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;Get records&lt;/sys_name&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ws_operation_1dcf2528471102105e2797da116d43e4&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-29 05:53:46&lt;/sys_updated_on&gt;&lt;web_service_definition display_value="Get Tickets"&gt;ad5e29a4471102105e2797da116d4329&lt;/web_service_definition&gt;&lt;web_service_version display_value="v1"&gt;c5797160475102105e2797da116d4321&lt;/web_service_version&gt;&lt;/sys_ws_operation&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1872854968</payload_hash>
+        <record_name>Get records</record_name>
+        <reverted_from/>
+        <source>75ed6de0471102105e2797da116d43c4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-29 05:53:46</sys_created_on>
+        <sys_id>4579f524475102105e2797da116d438b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18e88c576a70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-29 05:53:46</sys_updated_on>
+        <type>Scripted REST Resource</type>
+        <update_guid>c979f524ba5102104bf534c4d80d898a</update_guid>
+        <update_guid_history>c979f524ba5102104bf534c4d80d898a:1872854968,cde53dec96110210f33153a4bbe05315:138029403,89c5b16cd8110210946c3efb23bb1ead:1519008061,2b75fde84f11021092b923ec7b918df4:-137789939,44b2b1682a1102105859614b20958430:-284403512,ec50fde001110210af590532f8c01fa2:878655222</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-29 05:56:03</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_operation">sys_ws_operation</sys_db_object>
+        <sys_id>4ccef7dfed5440009841cdb94f100000</sys_id>
+        <sys_metadata>1dcf2528471102105e2797da116d43e4</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get records</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_ws_operation_1dcf2528471102105e2797da116d43e4</sys_update_name>
+        <sys_update_version display_value="sys_ws_operation_1dcf2528471102105e2797da116d43e4">4579f524475102105e2797da116d438b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-29 05:56:03</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
