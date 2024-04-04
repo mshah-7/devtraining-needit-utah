@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="spAttachmentManager">06e836f0d722120023c84f80de6103a1</sp_angular_provider>
+        <sp_widget display_value="formClone2">f3685e6d475502105e2797da116d4342</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-01 10:43:03</sys_created_on>
+        <sys_id>7b685e6d475502105e2797da116d4345</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spAttachmentManager.formClone2</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_7b685e6d475502105e2797da116d4345</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-01 10:43:03</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>a4550c9bdbf1791038f11729139619d2</instance_id>
+        <instance_name>dev186503</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_7b685e6d475502105e2797da116d4345</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="spAttachmentManager">06e836f0d722120023c84f80de6103a1</sp_angular_provider><sp_widget display_value="formClone2">f3685e6d475502105e2797da116d4342</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-04-01 10:43:03</sys_created_on><sys_id>7b685e6d475502105e2797da116d4345</sys_id><sys_mod_count>0</sys_mod_count><sys_name>spAttachmentManager.formClone2</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_7b685e6d475502105e2797da116d4345</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-04-01 10:43:03</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>-1827009562</payload_hash>
+        <record_name>spAttachmentManager.formClone2</record_name>
+        <reverted_from/>
+        <source>75ed6de0471102105e2797da116d43c4</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-01 10:43:03</sys_created_on>
+        <sys_id>37685e6d475502105e2797da116d4348</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18e994164f10000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-01 10:43:03</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>3b685e6d82550210d1a2e88c42b5f047</update_guid>
+        <update_guid_history>3b685e6d82550210d1a2e88c42b5f047:-1827009562</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="spAttachmentManager.formClone2">61c892ed475502105e2797da116d4362</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-01 10:44:32</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>7463131a7647454d817b8355cde12551</sys_id>
+        <sys_metadata>7b685e6d475502105e2797da116d4345</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spAttachmentManager.formClone2</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_7b685e6d475502105e2797da116d4345</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_7b685e6d475502105e2797da116d4345">37685e6d475502105e2797da116d4348</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-01 10:44:32</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
